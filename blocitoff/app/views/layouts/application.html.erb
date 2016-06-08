@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blocitoff</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <head>
+        <title>Blocitoff</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
 
-<%= yield %>
+        <ul>
+            <% if user_signed_in? %>
+            <li>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
 
-</body>
+        <li>
+            <%= link_to "Sign up", new_user_registration_path %></li>
+        <li>
+            <%= link_to "Sign in", new_user_session_path %></li>
+
+            <% end %>
+        </ul>
+        <ul>
+            <li><%= link_to "Home", welcome_home_path %></li>
+            <li><%= link_to "About", welcome_about_path %></li>
+            <li><%= link_to "Contact", welcome_contact_path %></li>
+        </ul>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+
+        <%= yield %>
+
+    </body>
 </html>
