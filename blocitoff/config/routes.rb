@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'welcome/about'
   get 'welcome/contact'
 
-
     devise_for :users
     authenticated :user do
         root 'users#show', as: :authenticated_root
