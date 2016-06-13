@@ -31,6 +31,11 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height, step: 0.1%>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

@@ -1,5 +1,6 @@
 <h2>Sign up</h2>
 
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -24,6 +25,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height, step: 0.1  %>
   </div>
 
   <div class="actions">
