@@ -8,32 +8,41 @@
     </head>
     <body>
 
-      <div class="row">
-        <div class="col-sm-12">
-        <ul>
-            <% if user_signed_in? %>
-            <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                <li> <%= link_to "View #{current_user.name}'s profile", authenticated_root_path %></li>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-left">
+                        <ul>
+                            <% if user_signed_in? %>
+                            <li>
+                                <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                            <li>
+                                <%= link_to "View #{current_user.name}'s profile", authenticated_root_path %></li>
 
-        <% else %>
+                        <% else %>
 
-            <li>
-                <%= link_to "Sign up", new_user_registration_path %></li>
-            <li>
-                <%= link_to "Sign in", new_user_session_path %></li>
+                            <li>
+                                <%= link_to "Sign up", new_user_registration_path %></li>
+                            <li>
+                                <%= link_to "Sign in", new_user_session_path %></li>
 
-            <% end %>
-            <li><%= link_to "Home", welcome_home_path %></li>
-            <li><%= link_to "About", welcome_about_path %></li>
-            <li><%= link_to "Contact", welcome_contact_path %></li>
-        </ul>
-      </div>
-      </div>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+                            <% end %>
+                          </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-right">
+                             <li><%=link_to "Home" , welcome_home_path %></li>
+                            <li><%= link_to "About", welcome_about_path %></li>
+                            <li><%= link_to "Contact", welcome_contact_path %></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-    </body>
+    <%= yield %>
+
+</body>
 </html>
