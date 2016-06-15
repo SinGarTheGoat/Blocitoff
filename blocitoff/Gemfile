@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+#in the terminal I 'ran gem install faker'
+gem 'faker'
 #for authentication of user
 gem 'devise'
 #for making css eaiser
