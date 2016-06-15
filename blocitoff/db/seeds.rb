@@ -20,8 +20,6 @@ users = User.all
     user:   users.sample,
     name:   Faker::Lorem.sentence(3)
   )
-
-
 end
 items = Item.all
 puts "#{User.count} users created"
