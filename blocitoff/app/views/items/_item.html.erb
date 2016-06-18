@@ -1,1 +1,6 @@
-<%= item.name %>
+<li id="item-<%= item.id %>" class="list-group-item">
+  <%= item.name %>
+  <span class="pull-right">
+    <%= link_to "Delete", item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+  </span>
+</li>

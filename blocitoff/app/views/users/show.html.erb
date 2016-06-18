@@ -1,14 +1,20 @@
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1>hello  <%=@user.name%>
-        </h1>
-        <h1><%= @user.height %></h1>
-        <h1><%= @user.email %>
+  <div class="container">
+    <h1>Hello  <%=@user.name%>.
+    </h1>
+    <h3>You are <%= @user.height %> feet tall.</h3>
+    <h3>Your E-mail is <%= @user.email %>.</h3>
+  </div>
+<h3>This is your todo list... </h3>
 
-            <% @items.each do |item|%>
-            <%= render partial: "items/item", locals: { item: item } %><br>
-            <% end%>
-
-            <%= render partial: "items/form", locals: { user: @user, item: Item.new } %>
-          </div>
-      </div>
+  <ul class="list-group">
+    <h3>
+    <% @items.each do |item|%>
+      <%= render partial: "items/item", locals: { item: item } %><br>
+    <% end%>
+  </h3>
+  </ul>
+<h3>
+  <%= render partial: "items/form", locals: { user: @user, item: Item.new } %>
+</h3>
+</div>

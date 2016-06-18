@@ -7,42 +7,48 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              Blocitoff
+            </a>
+          </div>
+          <div class="collapse navbar-collapse pull-left">
+            <ul class="nav navbar-nav">
+                 <li><%=link_to "Home" , welcome_home_path %></li>
+                <li><%= link_to "About", welcome_about_path %></li>
+                <li><%= link_to "Contact", welcome_contact_path %></li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse pull-right">
+            <ul class="nav navbar-nav">
 
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="text-left">
-                        <ul>
-                            <% if user_signed_in? %>
-                            <li>
-                                <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                            <li>
-                                <%= link_to "View #{current_user.name}'s profile", authenticated_root_path %></li>
+              <% if user_signed_in? %>
+              <li>
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <li>
+                  <%= link_to "View #{current_user.name}'s profile", authenticated_root_path %></li>
 
-                        <% else %>
+              <% else %>
 
-                            <li>
-                                <%= link_to "Sign up", new_user_registration_path %></li>
-                            <li>
-                                <%= link_to "Sign in", new_user_session_path %></li>
+              <li>
+                  <%= link_to "Sign up", new_user_registration_path %></li>
+              <li>
+                  <%= link_to "Sign in", new_user_session_path %></li>
 
-                            <% end %>
-                          </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-right">
-                             <li><%=link_to "Home" , welcome_home_path %></li>
-                            <li><%= link_to "About", welcome_about_path %></li>
-                            <li><%= link_to "Contact", welcome_contact_path %></li>
-                        </ul>
-                </div>
-            </div>
+              <% end %>
+            </ul>
+          </div>
         </div>
-    </div>
+      </nav>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
 </body>
 </html>
