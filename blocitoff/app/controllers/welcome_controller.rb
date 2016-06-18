@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-#before_action: :authenticate! :user, only: [:contact]
+  # before_action: :authenticate! :user, only: [:contact]
 
   def home
     @items = current_user.items if current_user
@@ -10,5 +10,4 @@ class WelcomeController < ApplicationController
 
   def contact
   end
-
 end
