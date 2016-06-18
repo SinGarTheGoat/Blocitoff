@@ -8,4 +8,3 @@ class CreateItems < ActiveRecord::Migration
     end
   end
 end
- 

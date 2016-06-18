@@ -11,7 +11,7 @@
     password: Faker::Internet.password(6),
     name:     Faker::StarWars.character,
     height:   Faker::Number.decimal(6, 1)
-)
+  )
 end
 users = User.all
 
