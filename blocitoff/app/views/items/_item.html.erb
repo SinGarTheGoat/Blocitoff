@@ -2,5 +2,6 @@
   <%= item.name %>
   <span class="pull-right">
     <%= link_to "Delete", item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+  <%=   distance_of_time_in_words(item.created_at , item.created_at + 7.days, include_seconds: true)%>
   </span>
 </li>
