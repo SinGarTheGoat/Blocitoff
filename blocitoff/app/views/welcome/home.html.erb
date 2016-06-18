@@ -1,17 +1,25 @@
 
+<div>
+<h1> Welcome to Blocitoff</h1>
+<h4>A self destructing todo list</h4>
 
+</div>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-3">
+
         <% if user_signed_in?%>
-            <h1>
-                Thanks for being a part of the community
-            </h1>
+            <h3>
+                Thanks for being a part of the community, now get to work!
+                <% @items.each do |item|%>
+                <%= render partial: "items/item", locals: { item: item } %><br>
+                <% end%>
+            </h3>
             <%else%>
-            <h1>
-                <%= link_to "Sign in", new_user_session_path %></h1>
-            <h1>
-                <%= link_to "Sign up", new_user_registration_path %></h1>
+            <h3>
+                <%= link_to "Sign in", new_user_session_path %></h3>
+            <h3>
+                <%= link_to "Sign up", new_user_registration_path %></h3>
             <%end%></h1>
     </div>
 </div>

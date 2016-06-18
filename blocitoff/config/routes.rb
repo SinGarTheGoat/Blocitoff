@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'items/create'
+  #get 'items/create'
+  resources :items, only: [:create, :destroy]
 
   get 'welcome/home'
   get 'welcome/about'
   get 'welcome/contact'
   resources :users do
-    resources :items, only: [:create]
+    resources :items, only: [:create, :destroy]
   end
 
     authenticated :user do
