@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = 'Item was saved successfully.'
       redirect_to user_path(current_user)
+
+
     else
 
       flash.now[:alert] = 'Error creating item. Please try again.'
