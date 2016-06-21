@@ -16590,3 +16590,112 @@ Processing by WelcomeController#home as HTML
   Rendered items/_item.html.erb (0.4ms)
   Rendered welcome/home.html.erb within layouts/application (19.5ms)
 Completed 200 OK in 133ms (Views: 128.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-21 13:16:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+Processing by UsersController#show as HTML
+  [1m[36mItem Load (1.7ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 11]]
+  Rendered items/_item.html.erb (742.7ms)
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_form.html.erb (73.5ms)
+  Rendered users/show.html.erb within layouts/application (900.6ms)
+Completed 200 OK in 2609ms (Views: 2559.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-06-21 13:16:11 -0700
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+Processing by UsersController#show as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 11]]
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_form.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 92ms (Views: 91.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/home" for ::1 at 2016-06-21 13:16:16 -0700
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 11]]
+  Rendered items/_item.html.erb (1.2ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered welcome/home.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 78ms (Views: 75.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-21 13:16:21 -0700
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+Processing by UsersController#show as HTML
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 11]]
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.7ms)
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_item.html.erb (1.0ms)
+  Rendered items/_form.html.erb (1.7ms)
+  Rendered users/show.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 95ms (Views: 94.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-06-21 13:16:24 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sggU2Q6KoXuwNtTmTVfT70OBPtp9+xqjz7We6Kbf++US8UCwL78V8R+tVw8Xuft2gRBU4hOCKDhZGwjYRrzAlQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-06-21 13:16:24 -0700
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 66ms (Views: 65.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-06-21 13:16:26 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 141ms (Views: 139.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-06-21 13:16:37 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yyLzgGXsLUzqNsG83xM0yCdIApkH+u3mV3WjRb7Vxzu8ocEJYHzRRHozYJ35zm/r6bDq5inB2v0LAlaGeTJeAw==", "user"=>{"email"=>"iloveburningman@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (16.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "iloveburningman@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-06-21 02:20:00.916524"], ["current_sign_in_at", "2016-06-21 20:16:37.798179"], ["sign_in_count", 13], ["updated_at", "2016-06-21 20:16:37.799099"], ["id", 11]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 396ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/" for ::1 at 2016-06-21 13:16:37 -0700
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 11]]
+Processing by UsersController#show as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 11]]
+  Rendered items/_item.html.erb (0.8ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.3ms)
+  Rendered items/_form.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.2ms)
