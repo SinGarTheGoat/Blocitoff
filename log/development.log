@@ -16699,3 +16699,33 @@ Processing by UsersController#show as HTML
   Rendered items/_form.html.erb (0.7ms)
   Rendered users/show.html.erb within layouts/application (15.4ms)
 Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/home" for ::1 at 2016-06-22 12:33:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (16.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mItem Load (10.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 11]]
+  Rendered items/_item.html.erb (988.0ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.6ms)
+  Rendered welcome/home.html.erb within layouts/application (1086.1ms)
+Completed 200 OK in 3129ms (Views: 2875.5ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/" for ::1 at 2016-06-22 12:34:08 -0700
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+Processing by UsersController#show as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 11]]
+  Rendered items/_item.html.erb (4.8ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.4ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.5ms)
+  Rendered items/_item.html.erb (0.9ms)
+  Rendered items/_form.html.erb (525.6ms)
+  Rendered users/show.html.erb within layouts/application (606.4ms)
+Completed 200 OK in 928ms (Views: 926.0ms | ActiveRecord: 0.3ms)
