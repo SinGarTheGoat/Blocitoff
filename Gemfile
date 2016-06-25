@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "rspec"
+
 # in the terminal I 'ran gem install faker'
 gem 'faker'
 # for authentication of user

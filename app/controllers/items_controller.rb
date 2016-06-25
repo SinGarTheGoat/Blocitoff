@@ -2,8 +2,12 @@ class ItemsController < ApplicationController
   def create
     @item = current_user.items.build(item_params)
     if @item.save
+      @hidden=true 
       flash[:notice] = 'Item was saved successfully.'
-      redirect_to user_path(current_user)
+      #redirect_to user_path(current_user)
+      respond_to do |format|
+        format.js
+      end
     else
 
       flash.now[:alert] = 'Error creating item. Please try again.'
@@ -19,7 +23,6 @@ class ItemsController < ApplicationController
       flash[:alert] = "Item couldn't be deleted. Try again."
     end
     respond_to do |format|
-      format.html
       format.js
     end
  end
