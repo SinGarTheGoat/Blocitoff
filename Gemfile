@@ -47,7 +47,7 @@ group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  gem "rspec "
+  gem "rspec"
 end
 
 group :development do
