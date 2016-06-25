@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "rspec"
+
 
 # in the terminal I 'ran gem install faker'
 gem 'faker'
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem "rspec "
 end
 
 group :development do
